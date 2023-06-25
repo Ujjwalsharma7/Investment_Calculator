@@ -8,14 +8,15 @@ const initialUserinput = {
     duration: 10,
 };
 
-function UserInput() {
+function UserInput(props) {
     const [userInput, setUserInput] = useState(initialUserinput)
 
 
     const submitHandler = (event) => {
         event.preventDefault();
 
-        console.log("submit")
+        props.onCalculate(userInput);
+       
     }
 
     const resetHandler = () => {
