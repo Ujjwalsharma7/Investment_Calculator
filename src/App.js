@@ -38,8 +38,8 @@ const [userInput, setUserInput] = useState(null);
       <Header/>
   
       <UserInput onCalculate={calculateHandler}/>
-    
-     <ResultsTable/>
+    {!userInput && <p> No investment calculated yet</p>}
+     {userInput && <ResultsTable/>}
     </div>
   );
 }
